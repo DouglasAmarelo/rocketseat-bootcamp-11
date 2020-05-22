@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import signinBackground from '../../assets/sign-in-background.png';
+import signupBackground from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
+  align-items: stretch;
   display: flex;
   min-height: 100vh;
-  align-items: stretch;
 `;
 
 export const Content = styled.div`
@@ -41,7 +41,7 @@ export const Content = styled.div`
 
   & > a {
     align-items: center;
-    color: #ff9000;
+    color: #f4ede8;
     display: flex;
     margin-top: 24px;
     text-decoration: none;
@@ -53,13 +53,13 @@ export const Content = styled.div`
     }
 
     &:hover {
-      color: #e88607;
+      color: #cacaca;
     }
   }
 `;
 
 export const Background = styled.div`
-  background: url(${signinBackground}) center center no-repeat;
+  background: url(${signupBackground}) center center no-repeat;
   background-size: cover;
   flex: 1;
 `;
