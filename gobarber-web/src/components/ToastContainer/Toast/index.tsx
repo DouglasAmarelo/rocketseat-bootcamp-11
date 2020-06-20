@@ -13,6 +13,7 @@ import * as S from './styles';
 
 interface ToastProps {
   message: ToastMessage;
+  style: object;
 }
 
 const toastIcons = {
@@ -24,6 +25,7 @@ const toastIcons = {
 
 const Toast: React.FC<ToastProps> = ({
   message: { id, title, description, type },
+  style,
 }) => {
   const { removeToast } = useToast();
 
@@ -38,7 +40,7 @@ const Toast: React.FC<ToastProps> = ({
   }, [removeToast, id]);
 
   return (
-    <S.Toast key={id} {...(type && { type })}>
+    <S.Toast key={id} style={style} {...(type && { type })}>
       {toastIcons[type || 'INFO']}
 
       <div>

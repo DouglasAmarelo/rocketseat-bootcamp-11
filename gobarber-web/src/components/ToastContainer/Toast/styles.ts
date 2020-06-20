@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { animated } from 'react-spring';
 
 type ToastProps = {
   type?: 'INFO' | 'SUCCESS' | 'WARNING' | 'ERROR';
@@ -23,7 +24,7 @@ const toastTypes = {
   `,
 };
 
-export const Toast = styled.div<ToastProps>`
+export const Toast = styled(animated.div)<ToastProps>`
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   display: flex;
