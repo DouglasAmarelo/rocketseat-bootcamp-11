@@ -1,4 +1,5 @@
 import React, { useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
@@ -52,6 +53,8 @@ const SignIn: React.FC = () => {
         if (error instanceof Yup.ValidationError) {
           const errors = getValidationErrors(error);
           formRef.current?.setErrors(errors);
+
+          return;
         }
 
         addToast({
@@ -70,38 +73,40 @@ const SignIn: React.FC = () => {
   return (
     <S.Container>
       <S.Content>
-        <img src={logo} alt="Go Barber" />
+        <S.AnimatedContainer>
+          <img src={logo} alt="Go Barber" />
 
-        <Form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
-          <h1>Faça seu Logon</h1>
+          <Form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
+            <h1>Faça seu Logon</h1>
 
-          <Input
-            name="email"
-            type="text"
-            autoComplete="new-password"
-            placeholder="E-mail"
-            icon={FiMail}
-          />
+            <Input
+              name="email"
+              type="text"
+              autoComplete="new-password"
+              placeholder="E-mail"
+              icon={FiMail}
+            />
 
-          <Input
-            name="password"
-            type="password"
-            autoComplete="new-password"
-            placeholder="Senha"
-            icon={FiLock}
-          />
+            <Input
+              name="password"
+              type="password"
+              autoComplete="new-password"
+              placeholder="Senha"
+              icon={FiLock}
+            />
 
-          <Button type="submit">Entrar</Button>
+            <Button type="submit">Entrar</Button>
 
-          <a href="/esqueci-minha-senha" title="Esqueci minha senha">
-            Esqueci minha senha
-          </a>
-        </Form>
+            <a href="/esqueci-minha-senha" title="Esqueci minha senha">
+              Esqueci minha senha
+            </a>
+          </Form>
 
-        <a href="/criar-conta" title="Criar conta">
-          <FiLogIn />
-          Criar conta
-        </a>
+          <Link to="/signup" title="Criar conta">
+            <FiLogIn />
+            Criar conta
+          </Link>
+        </S.AnimatedContainer>
       </S.Content>
 
       <S.Background />

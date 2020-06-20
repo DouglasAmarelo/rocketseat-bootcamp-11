@@ -1,4 +1,5 @@
 import React, { useCallback, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FiArrowLeft, FiMail, FiUser, FiLock } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
@@ -40,42 +41,44 @@ const SignUp: React.FC = () => {
     <S.Container>
       <S.Background />
       <S.Content>
-        <img src={logo} alt="Go Barber" />
+        <S.AnimatedContainer>
+          <img src={logo} alt="Go Barber" />
 
-        <Form ref={formRef} onSubmit={handleSubmit} autoComplete="off">
-          <h1>Faça seu Cadastro</h1>
+          <Form ref={formRef} onSubmit={handleSubmit} autoComplete="off">
+            <h1>Faça seu Cadastro</h1>
 
-          <Input
-            name="name"
-            type="text"
-            autoComplete="new-password"
-            placeholder="Nome"
-            icon={FiUser}
-          />
+            <Input
+              name="name"
+              type="text"
+              autoComplete="new-password"
+              placeholder="Nome"
+              icon={FiUser}
+            />
 
-          <Input
-            name="email"
-            type="text"
-            autoComplete="new-password"
-            placeholder="E-mail"
-            icon={FiMail}
-          />
+            <Input
+              name="email"
+              type="text"
+              autoComplete="new-password"
+              placeholder="E-mail"
+              icon={FiMail}
+            />
 
-          <Input
-            name="password"
-            type="password"
-            autoComplete="new-password"
-            placeholder="Senha"
-            icon={FiLock}
-          />
+            <Input
+              name="password"
+              type="password"
+              autoComplete="new-password"
+              placeholder="Senha"
+              icon={FiLock}
+            />
 
-          <Button type="submit">Cadastrar</Button>
-        </Form>
+            <Button type="submit">Cadastrar</Button>
+          </Form>
 
-        <a href="/criar-conta" title="Criar conta">
-          <FiArrowLeft />
-          Voltar para o logon
-        </a>
+          <Link to="/" title="Voltar para o logon">
+            <FiArrowLeft />
+            Voltar para o logon
+          </Link>
+        </S.AnimatedContainer>
       </S.Content>
     </S.Container>
   );
