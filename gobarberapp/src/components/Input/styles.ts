@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Feather';
 
+import { FONT_REGULAR } from '../../helpers/fonts';
+
 export const Container = styled.View`
   align-items: center;
   background: #232129;
@@ -19,6 +21,6 @@ export const InputIcon = styled(Icon)`
 export const TextInput = styled.TextInput`
   color: #fff;
   flex: 1;
-  font-family: 'RobotoSlab-Regular';
+  font-family: ${FONT_REGULAR};
   font-size: 16px;
 `;

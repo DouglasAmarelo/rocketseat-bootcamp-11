@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
+import { FONT_MEDIUM } from '../../helpers/fonts';
+
 export const Container = styled(RectButton)`
   align-items: center;
   background: #ff9000;
@@ -12,7 +14,7 @@ export const Container = styled(RectButton)`
 `;
 
 export const ButtonText = styled.Text`
-  font-family: 'RobotoSlab-Medium';
+  font-family: ${FONT_MEDIUM};
   color: #312e38;
   font-size: 16px;
 `;
